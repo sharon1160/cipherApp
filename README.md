@@ -1,9 +1,9 @@
 # Cipher App
 Application to encrypt and decrypt in python using Django and bootstrap
-## Algoritmos
-- Cifrado
-  * [Transposición Interrumpida](https://github.com/sharon1160/cipherApp/blob/main/home/algorithms/interrupted_transposition.py)
-- Descifrado
+## Algorithms
+- Cipher
+  * [Interrupted transposition](https://github.com/sharon1160/cipherApp/blob/main/home/algorithms/interrupted_transposition.py)
+- Decipher
   * [Playfair](https://github.com/sharon1160/cipherApp/blob/main/home/algorithms/Playfair.py)
   * [Cesar](https://github.com/sharon1160/cipherApp/blob/main/home/algorithms/Cesitar.py)
 ## Prerequisites
