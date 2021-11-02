@@ -5,6 +5,7 @@ from django.contrib import messages
 from .forms import TextTransForm, TextPlayfairForm, TextCesarForm
 from .algorithms.interrupted_transposition import interruptedTransposition
 from .algorithms.Playfair import DesencriptarPlayfair
+from .algorithms.Cesitar import cesar_descifrar
 
 TEMPLATE_DIRS = (
   'os.path.join(BASE_DIR, "templates"),'
@@ -66,8 +67,9 @@ def cesar_decipher(request):
     form = TextCesarForm(request.POST)
     if form.is_valid():
       key = form.cleaned_data['key']
+      key = int(key)
       ciphertext = form.cleaned_data['text_cipher']
-      plainText = interruptedTransposition(key, ciphertext) # Aqui poner la funcion
+      plainText = cesar_descifrar(ciphertext, key) # Aqui poner la funcion
       return render (request, 'cesar/result.html', {'result': plainText})
   else:
     form = TextCesarForm()
