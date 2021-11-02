@@ -26,7 +26,6 @@ def transposition_cipher(request):
       key = form.cleaned_data['key']
       plainText = form.cleaned_data['plain_text']
       ciphertext, msg = interruptedTransposition(key, plainText)
-      print(msg)
       return render (request, 'transposition/result.html', {'result': ciphertext, 'msg': msg})
   else:
     form = TextTransForm()
