@@ -75,7 +75,7 @@ def DesencriptarPlayfair(clave,cifrado):
         texto.append(text)
     #print('Texto: '+"".join(texto))
     txt = "".join(texto)
-    return txt
+    return txt.upper()
     #print(texto)
     
 
