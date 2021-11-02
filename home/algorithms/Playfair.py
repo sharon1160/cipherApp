@@ -16,7 +16,7 @@ def matrix_clave(clave):
     for c in abc:
         matriz[i]+=c
         abc=abc.replace(c,'')
-        j+=1;
+        j+=1
         if j>4:
             i+=1
             j=0
@@ -72,11 +72,12 @@ def DesencriptarPlayfair(clave,cifrado):
         text = matriz[i0][j1]+matriz[i1][j0]
         texto.append(text)
     #print('Texto: '+"".join(texto))
-    print(texto)
+    txt = "".join(texto)
+    return txt
+    #print(texto)
     
-clav = input('Clave : ')
-cifrad = input('Texto cifrado : ')
-DesencriptarPlayfair(clav,cifrad)
+
+#DesencriptarPlayfair(clav,cifrad)
 
 
 

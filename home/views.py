@@ -4,6 +4,7 @@ from django.contrib import messages
 
 from .forms import TextTransForm, TextPlayfairForm, TextCesarForm
 from .algorithms.interrupted_transposition import interruptedTransposition
+from .algorithms.Playfair import DesencriptarPlayfair
 
 TEMPLATE_DIRS = (
   'os.path.join(BASE_DIR, "templates"),'
@@ -48,7 +49,7 @@ def playfair_decipher(request):
     if form.is_valid():
       key = form.cleaned_data['key']
       ciphertext = form.cleaned_data['text_cipher']
-      plainText = interruptedTransposition(key, ciphertext) # Aqui poner la funcion
+      plainText = DesencriptarPlayfair(key,ciphertext) # Aqui poner la funcion
       return render (request, 'playfair/result.html', {'result': plainText})
   else:
     form = TextPlayfairForm()
