@@ -2,8 +2,8 @@ from cesar import *
 from preprocess import funcion2, funcion4
 import os
 
-directorio_salida = r'C:\Users\BRAYAN LIPE\Documents\UNSA\2021\SEMESTRE B\Seguridad en computacion\Teoría\Unidad 2\tarea 2\code'
-files = os.listdir(directorio_salida)
+#directorio_salida = r'C:\Users\BRAYAN LIPE\Documents\UNSA\2021\SEMESTRE B\Seguridad en computacion\Teoría\Unidad 2\tarea 2\code'
+#files = os.listdir(directorio_salida)
 sign_list = [' ', '.', ',', ';', '¡', '!', '¿', '?', '\n']
 accent_list = ['á', 'é', 'í', 'ó', 'ú']
 
