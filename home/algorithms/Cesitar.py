@@ -1,13 +1,42 @@
 import string
 
-#alfabeto = list(string.ascii_lowercase + string.ascii_uppercase)
-alfabeto = list(string.ascii_uppercase)
+alfabeto = list(string.ascii_lowercase + string.ascii_uppercase)
+#alfabeto = list(string.ascii_uppercase)
 #alfabeto = list(string.ascii_lowercase)
+accent_list = ['á', 'é', 'í', 'ó', 'ú']
+
+sign_list = [' ', '.', ',', ';', '¡', '!', '¿', '?', '\n']
+
+def funcion2(text: str, accent_list):
+    for accent in accent_list:
+        if ord(accent) == 225:
+            text = text.replace(accent, 'a')
+        if ord(accent)==233:
+            text = text.replace(accent, 'e')
+        if ord(accent)==237:
+            text = text.replace(accent, 'i')
+        if ord(accent)==243:
+            text = text.replace(accent, 'o')
+        if ord(accent)==250:
+            text = text.replace(accent, 'u')
+    return text
+
+def funcion3(text: str):
+    return text.upper()
+
+def funcion4(text: str, sign_list):
+    text = text.strip()
+    for sign in sign_list:
+        text = text.replace(sign, '')
+    return text
+
 
 def cesar_cifrar(text, key):
+    text_p1 = funcion2(text, accent_list)
+    text_p2 = funcion4(text_p1, sign_list)
     cipher = ""
-    for i in range(len(text)): 
-        char = text[i]
+    for i in range(len(text_p2)): 
+        char = text_p2[i]
         if (char.islower()):
             cipher += chr((ord(char) + key - 97) % 26 + 97) 
         else:
@@ -54,8 +83,9 @@ def cesar_descifrar(text, key):
     return decoded_text'''
 
 def brute_force(text):
+
     for i in range(26):
-        print(i, ":: "+chr(65+i)+": "+ cesar_descifrar(text,i))
+        print(i, ":: " + chr(65+i)+": "+ cesar_descifrar(text,i))
     '''for key in range(len(alfabeto)):
         translated = ''
         for symbol in text:
@@ -69,8 +99,8 @@ def brute_force(text):
             translated = translated + symbol
         print('Hacking key #%s: %s' % (key, translated))'''
     
-'''message = "Bota tu gaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaas chupetin pipipipipipipipipii la recoooonn"
+'''message = "HOLA COMO ESTAS"
 m_c = cesar_cifrar(message, 50)
-print(m_c)
-#print(cesar_descifrar(message, 3))
-brute_force(m_c)'''
+print(m_c)'''
+#m_c = ""
+#brute_force(m_c)
