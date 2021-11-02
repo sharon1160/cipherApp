@@ -24,8 +24,10 @@ def matrix_clave(clave):
 
 def DesencriptarPlayfair(clave,cifrado):
     clave=clave.lower()
+    clave=clave.replace(' ','')
     matriz =  matrix_clave(clave)
     cifrado = cifrado.lower()
+    cifrado=cifrado.replace(' ','')
     texto=[]
     pares=[]
     i=0
