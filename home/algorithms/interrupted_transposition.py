@@ -1,14 +1,23 @@
 ################# PRINT #################
 
 def printHeader(matrixHeader):
+  msg = ''
   for k in matrixHeader:
-    print(k,matrixHeader[k])
+    msg += matrixHeader[k] + ' '
+  msg += '\n'
+  for k in matrixHeader:
+    msg += str(k) + ' '
+  msg += '\n'
+  return msg
 
 def printMatrix(matrix):
+  msg = ''
   for i in range(len(matrix)):
     for j in range(len(matrix[0])):
-      print(matrix[i][j]," ",end='')
-    print()
+      msg += matrix[i][j] + " "
+    msg += '\n'
+  msg += '\n'
+  return msg
 
 ################# PRE-PROCESSING #################
 
@@ -109,5 +118,11 @@ def interruptedTransposition(key, text):
 
   # GET ENCRYPTED TEXT
   result = getEncryptedText(matrixHeader, matrix)
-  return result
+
+  # GET MATRIX
+  msg = ""
+  msg += printHeader(matrixHeader)
+  msg += "----------------------------\n"
+  msg += printMatrix(matrix)
+  return result, msg
 
